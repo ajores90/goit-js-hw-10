@@ -18,3 +18,34 @@ body {
   max-width: 320px;
   margin-bottom: 16px;
 }
+
+#search-box {
+  padding: 10px;
+  border: 2px solid #ccc;
+  border-radius: 5px;
+  font-size: 20px;
+  margin-bottom: 20px;
+}
+
+.country-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.country-item:hover {
+  background-color: #f1f1f1;
+}
+
+.country-image {
+  margin-right: 10px;
+}
+
+.country-text {
+  font-weight: bold;
+  margin-right: 5px;
+}
