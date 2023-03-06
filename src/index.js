@@ -20,20 +20,24 @@ function onSearchInput(event) {
     return;
   }
 
-  fetchCountries(searchQuery).then(countries => {
-    if (countries.length > 10) {
-      clearCountryList();
-      notiflix.Notify.info(
-        'Too many matches found. Please enter a more specific name.'
-      );
-    } else if (countries.length >= 2 && countries.length <= 10) {
-      renderCountryList(countries);
-      clearCountryInfo();
-    } else {
-      renderCountryInfo(countries);
-      clearCountryList();
-    }
-  });
+  fetchCountries(searchQuery)
+    .then(countries => {
+      if (countries.length > 10) {
+        clearCountryList();
+        notiflix.Notify.info(
+          'Too many matches found. Please enter a more specific name.'
+        );
+      } else if (countries.length >= 2 && countries.length <= 10) {
+        renderCountryList(countries);
+        clearCountryInfo();
+      } else {
+        renderCountryInfo(countries);
+        clearCountryList();
+      }
+    })
+    .catch(error => {
+      console.log(error, 'Oops, there is no country with that name');
+    });
 }
 
 function clearCountryList() {
